@@ -1,5 +1,5 @@
 {% set name = "pyocr" %}
-{% set version = "0.8.3" %}
+{% set version = "0.8.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyocr-{{ version }}.tar.gz
-  sha256: 8e315cbc1ec83709905c9bb7ac907c2f86725d32be75baa0ef4bcbf302daca8c
+  sha256: 1a3e9d7f8ad8dd0780f4145529d3076501a60dd71d8d6366339d726deed4df43
 
 build:
   number: 0
