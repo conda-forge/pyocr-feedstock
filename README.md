@@ -1,11 +1,11 @@
-About pyocr
-===========
+About pyocr-feedstock
+=====================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pyocr-feedstock/blob/main/LICENSE.txt)
 
 Home: https://openpaper.work/en/projects/
 
 Package license: GPL-3.0-or-later
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pyocr-feedstock/blob/main/LICENSE.txt)
 
 Summary: A Python wrapper for Tesseract and Cuneiform
 
