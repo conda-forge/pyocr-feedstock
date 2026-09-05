@@ -1,0 +1,55 @@
+schema_version: 1
+
+context:
+  name: pyocr
+  version: "0.8.5"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/pyocr-${{ version }}.tar.gz
+  sha256: eff33d95032426a92640e56fa0d71b496ee531c1d341a15cc610610a7c5eac55
+
+build:
+  number: 2
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - pip
+    - python ${{ python_min }}.*
+    - setuptools
+    - setuptools_scm <7
+    - setuptools_scm_git_archive
+  run:
+    - pillow
+    - python >=${{ python_min }}
+
+tests:
+  - python:
+      imports:
+        - pyocr
+        - pyocr.libtesseract
+      pip_check: true
+      python_version: ${{ python_min }}
+
+about:
+  license: GPL-3.0-or-later
+  license_file: COPYING
+  summary: A Python wrapper for Tesseract and Cuneiform
+  description: |
+    PyOCR is an optical character recognition (OCR) tool wrapper
+    for python. That is, it helps using various OCR tools from a
+    Python program. It has been tested only on GNU/Linux systems.
+    It should also work on similar systems (*BSD, etc). It may or
+    may not work on Windows, MacOSX, etc.
+  homepage: https://openpaper.work/en/projects/
+  repository: https://gitlab.gnome.org/World/OpenPaperwork/pyocr
+  documentation: https://openpaper.work/en/projects/
+
+extra:
+  recipe-maintainers:
+    - jan-janssen
